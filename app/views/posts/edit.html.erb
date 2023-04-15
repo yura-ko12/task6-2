@@ -1,0 +1,41 @@
+<div class="edit-wrapper">
+  <h2>予定の編集</h2>
+  <div class="edit-plan">
+
+  <%= form_with model: @post do |f| %>
+    <table>
+      <tr>
+        <th><%= f.label :title ,"タイトル" %></th>
+        <td><%= f.text_field :title %></td>
+      </tr>
+  
+      <tr>
+        <th><%= f.label :start ,"開始日" %></th>
+        <td><%= f.date_field :start %></td>
+      </tr>
+  
+      <tr>
+        <th><%= f.label :finish ,"終了日" %></th>
+        <td><%= f.date_field :finish %></td>
+      </tr>
+
+      <tr>
+        <th><%= f.label :is_allday, "終日"%></th>
+        <td><%= f.check_box :is_allday, checked: true %></td>
+      </tr>
+  
+      <tr>
+      <th><%= f.label :memo ,"スケジュールメモ" %></th>
+      <td><%= f.text_area :memo %></td>
+      </tr>
+    </table>
+   
+  
+      <ul>
+        <li><%= link_to "キャンセル", posts_path, class:"button cancel" %></li>
+        <li><%= f.submit "保存", class: "button save"%></li>
+      </ul>
+  <% end %>
+
+  </div>
+</div>

@@ -1,2 +1,45 @@
-# <h1>Posts#index</h1>
-# <p>Find me in app/views/posts/index.html.erb</p>  
+<% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+ <% end %>
+<div class="index-wrapper">
+    <h2>予定一覧</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>タイトル</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>終日</th>
+          <th>更新日時</th>
+          <th>詳細</th>
+          <th>編集</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.id %></td>
+            <td><%= post.title %></td>
+            <td><%= post.start %></td>
+            <td><%= post.finish %></td>
+            <td><%= post.is_allday %></td>
+            <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>  
+    </table>
+
+      <%= link_to "新規追加", new_post_path, class: "button" %>
+
+    <div class="sum-and-today">
+      <p>予定合計</p>
+      <p>本日の日付</p>
+    </div>
+</div>
