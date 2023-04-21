@@ -1,6 +1,12 @@
+<% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+ <% end %>
+
 <div class="edit-wrapper">
   <h2>予定の編集</h2>
   <div class="edit-plan">
+
+  <%= render "shared/error", obj: @post %>
 
   <%= form_with model: @post do |f| %>
     <table>

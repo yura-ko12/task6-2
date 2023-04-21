@@ -49,14 +49,21 @@ li{
   opacity: 0.6;
 }
 
-// .cancel{
-//   // text-decoration: none;
-// }
+.notice{
+  background-color: lightpink;
+  text-align: center;
+}
+
+input{
+  margin: 0;
+  padding: 0;
+}
 
 .save{
   background-color: blue;
   border: solid 1px blue;
   color: #ffffff;
+  font-size: 16px;
 }
 
 // 予定一覧ページ
@@ -66,10 +73,14 @@ li{
 }
 
 .index-wrapper table{
-  background-color: bisque;
   border-radius: 3px;
   margin: 20px;
   width: 95%;
+}
+
+thead{
+  text-align: left;
+  background-color: bisque;
 }
 
 tbody{
@@ -101,3 +112,24 @@ tbody{
 
 
 
+
+
+//予定の詳細ページ
+
+.show-plan{
+  margin: 0 auto;
+  width: 50%;
+}
+
+.show-plan p{
+  font-size: 25px;
+  text-align: center;
+}
+
+
+//予定の編集ページ
+
+.edit-plan{
+  margin: 0 auto;
+  width: fit-content;
+}
