@@ -1,0 +1,36 @@
+<div class="show-wrapper">
+  <h2>予定の新規追加</h2>
+
+  <div class="show-plan"> 
+    <p><%= @post.title %></p>
+
+    <table>
+      <tr>
+        <th>開始日</th>
+        <td><%= @post.start %></td>
+      </tr>
+  
+      <tr>
+        <th>終了日</th>
+        <td><%= @post.finish %></td>
+      </tr>
+
+      <tr>
+        <th>終日</th>
+        <td><%= @post.is_allday ? "○" : ""  %></td>
+      </tr>
+  
+      <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @post.memo %></td>
+      </tr>
+    </table>
+   
+  
+      <ul>
+        <li><%= link_to "← 一覧に戻る", posts_path, class:"button cancel" %></li>
+        <li><%= link_to "編集", edit_post_path(@post),class: "button edit"%></li>
+      </ul>
+
+  </div>
+</div>
